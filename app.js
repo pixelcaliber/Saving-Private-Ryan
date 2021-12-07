@@ -1,6 +1,6 @@
 var SavingRyan = (function () {
     'use strict';
-    
+     
     function SavingRyan(elId) {
         this.elId = elId;
         this.words = [

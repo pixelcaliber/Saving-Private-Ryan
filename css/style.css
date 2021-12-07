@@ -141,7 +141,7 @@ section#ryanan {
 
 .dark-mode {
 	background: linear-gradient(to bottom right, #0a0a0a 0%, #7e7c7c 100%);
-	color: white;
+	color: black;
 }
 .dark-mode .theme {
 	background-color: whitesmoke;

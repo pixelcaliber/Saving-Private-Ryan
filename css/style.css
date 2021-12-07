@@ -15,7 +15,9 @@ body a {
 	background: -webkit-linear-gradient(#64605f 3%, #352d2d 73%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	font-family: 'Lobster', cursive;
+/* 	font-family: 'Lobster', cursive; */
+		font-family: 'Fuzzy Bubbles', cursive;
+	margin-top: 70px;
 	;
 }
 .details {

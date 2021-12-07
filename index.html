@@ -19,8 +19,8 @@
  
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap" rel="stylesheet">        
-        
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap" rel="stylesheet">              
+
         <link rel="stylesheet" href="style.css" />
     </head>
     <body> 
@@ -29,7 +29,7 @@
                 background-color: #fefbd8;
                     text-align: center;
                     font-family: 'Roboto', sans-serif;
-                    background: linear-gradient(to bottom right, #33ccff 0%, #ffffcc 100%);
+                    background: linear-gradient(to bottom right, #33ccff 10%, #ffffcc 90%);
             }
             .dark-mode {
                 background: linear-gradient(to bottom right, #0a0a0a 0%, #7e7c7c 100%);
@@ -39,8 +39,7 @@
             <div id="heading" >
                 <h1>Save The Seargent</h1>
             </div>
-                <button class="btn shadow-none btn-sm btn-dark details theme" onclick="myFunction()">Mode</button>
-                <!-- <button class="btn shadow-none btn-sm btn-light details theme" onclick="myFunction()">Mode</button> -->
+                <button class="btn shadow-none btn-sm btn-dark details theme" onclick="myFunction()">Dark/Light Mode</button>
 
         <div id="ryan" class="container-fluid">
                 <div>
@@ -112,5 +111,22 @@
             <p style="text-align: center; font-size: 0.8em; color: #8f8f8f;">© Copyright 2022</p>
         
           </footer>
+ 
+          <section class="loading-overlay">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+              </div>
+           
+            </section>
+             <script src="js/plugins.js"></script>
+
     </body>
 </html>

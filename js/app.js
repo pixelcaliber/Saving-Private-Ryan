@@ -8,7 +8,9 @@ var SavingRyan =  (function () {
             "PUPPY","TURTLE","RABBIT","RACCOON","KITTEN","HAMSTER",
         "SHEEP","TURKEY","CHICKEN","HORSE","CHIMPANZEE","KANGAROO","KOALA",
         "ELEPHANT","LEOPARD","HIPPOPOTAMUS","GIRAFFE","CROCODILE","ALLIGATOR",
-        "HEDGEHOG"
+        "HEDGEHOG",
+        "ANT",
+        "ANTELOPE", "CAMEL","CAT", "FOX", "GORILLA", "HYENA", "JELLYFISH", "PARROT"
         ];
     }
     SavingRyan.prototype.reset = function () {
@@ -36,52 +38,29 @@ var SavingRyan =  (function () {
             this.showElementByIdWithContent(this.elId + "_" + this.MISTAKES, null);
             if (this.MISTAKES === 6) {
                 lives--;
-                this.showElementByIdWithContent(this.elId + "_end", "GAME OVER!<br/>The word was: " + this.WORD);
+                this.showElementByIdWithContent(this.elId + "_end", "GAME OVER! The word was: " + this.WORD);
                 this.STOPPED = true;
                 this.showElementByIdWithContent("score", "Score: " + score);
                 if(lives === 0){
                     myFunction();
-                    // this.showElementByIdWithContent("gamemodal", "Game Over! Ur score: " + score);                    
                 }
                 else
-                this.showElementByIdWithContent("lives", "Lives-left: " + lives);
+                this.showElementByIdWithContent("lives", "Lives: " + lives);
             }
         } else if (this.WORD.indexOf(this.getGuessedfWord()) !== -1) {
             score++;
             this.showElementByIdWithContent("score", "Score: " + score);
-            this.showElementByIdWithContent("lives", "Lives-left: " + lives);
+            this.showElementByIdWithContent("lives", "Lives: " + lives);
             this.showElementByIdWithContent(this.elId + "_end", "You made it!<br/>The word was: " + this.WORD);
             this.STOPPED = true;
         }
         
-        // this.showElementByIdWithContent("score", "score: " + this.score);
     };
-    // SavingRyan.prototype.drawScore = function(){
-    //     ctx.font = "16px Arial";
-    //     ctx.fillStyle = "#000000";
-    //     ctx.fillText("Score: "+ score, 8, 20);
-    // }
     function myFunction() {
 
         document.getElementById("gamescore").innerHTML = "Your Score: " + score;
         $('#gamemodal').modal('show');
-        // $('.alert').alert();
-        // // $(".alert").alert('close');
-        // $('#myAlert').on('closed.bs.alert', function () {
-        //     // do something…
-        //     location.reload(true);
-        //   })
-        // alert("Game Over! Your score: " + score);
-        // var txt;
 
-        //  confirm("Game Over! Your score: " + score) 
-        //  location.reload(true);
-        
-        // else {
-        //   txt = "You pressed Cancel!";
-        // }
-
-        // location.reload(true);
       }
     SavingRyan.prototype.showElementByIdWithContent = function (elId, content) {
         if (content !== null) {

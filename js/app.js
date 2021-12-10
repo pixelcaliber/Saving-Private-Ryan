@@ -1,8 +1,9 @@
-var SavingRyan = (function () {
-    'use strict';
-     
-    function SavingRyan(elId) {
-        this.elId = elId;
+var score = 0;
+var lives = 3;
+var SavingRyan =  (function () {
+
+    function SavingRyan() {
+        this.elId = 'ryan';
         this.words = [
             "PUPPY","TURTLE","RABBIT","RACCOON","KITTEN","HAMSTER",
         "SHEEP","TURKEY","CHICKEN","HORSE","CHIMPANZEE","KANGAROO","KOALA",
@@ -34,14 +35,54 @@ var SavingRyan = (function () {
             this.MISTAKES++;
             this.showElementByIdWithContent(this.elId + "_" + this.MISTAKES, null);
             if (this.MISTAKES === 6) {
+                lives--;
                 this.showElementByIdWithContent(this.elId + "_end", "GAME OVER!<br/>The word was: " + this.WORD);
                 this.STOPPED = true;
+                this.showElementByIdWithContent("score", "Score: " + score);
+                if(lives === 0){
+                    myFunction();
+                    // this.showElementByIdWithContent("gamemodal", "Game Over! Ur score: " + score);                    
+                }
+                else
+                this.showElementByIdWithContent("lives", "Lives-left: " + lives);
             }
         } else if (this.WORD.indexOf(this.getGuessedfWord()) !== -1) {
+            score++;
+            this.showElementByIdWithContent("score", "Score: " + score);
+            this.showElementByIdWithContent("lives", "Lives-left: " + lives);
             this.showElementByIdWithContent(this.elId + "_end", "You made it!<br/>The word was: " + this.WORD);
             this.STOPPED = true;
         }
+        
+        // this.showElementByIdWithContent("score", "score: " + this.score);
     };
+    // SavingRyan.prototype.drawScore = function(){
+    //     ctx.font = "16px Arial";
+    //     ctx.fillStyle = "#000000";
+    //     ctx.fillText("Score: "+ score, 8, 20);
+    // }
+    function myFunction() {
+
+        document.getElementById("gamescore").innerHTML = "Your Score: " + score;
+        $('#gamemodal').modal('show');
+        // $('.alert').alert();
+        // // $(".alert").alert('close');
+        // $('#myAlert').on('closed.bs.alert', function () {
+        //     // do something…
+        //     location.reload(true);
+        //   })
+        // alert("Game Over! Your score: " + score);
+        // var txt;
+
+        //  confirm("Game Over! Your score: " + score) 
+        //  location.reload(true);
+        
+        // else {
+        //   txt = "You pressed Cancel!";
+        // }
+
+        // location.reload(true);
+      }
     SavingRyan.prototype.showElementByIdWithContent = function (elId, content) {
         if (content !== null) {
             document.getElementById(elId).innerHTML = content;
@@ -56,7 +97,6 @@ var SavingRyan = (function () {
         }
     };
 
-  
     SavingRyan.prototype.getGuessedfWord = function () {
         var result = "", i;
         for (i = 0; i < this.WORD.length; i++) {
@@ -65,6 +105,5 @@ var SavingRyan = (function () {
         }
         return result;
     };
-
-    return new SavingRyan('ryan');    
+    return new SavingRyan();
 }());
